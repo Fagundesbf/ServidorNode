@@ -1,0 +1,7 @@
+npm init -y 
+
+node .\server.js 
+
+'use strict'
+
+npm i  http express debug --save
