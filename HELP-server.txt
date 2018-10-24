@@ -4,7 +4,22 @@ node .\server.js
 
 'use strict'
 
-npm i  http express debug --save
+npm i  http express debug --save  
+
+node .\bin\server.js
+
+===================================
+esculta de serviço
+
+npm install -g nodemon --save-dev  == apenas em desenvolvimento
+
+
+nodemon - inspecione ./server.js
+======================================
+pacote auxiliar json 
+
+npm i -g body-parser --save
+
 
 -========================  AULA 1 E 2 =================================
 
