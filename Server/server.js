@@ -5,7 +5,6 @@ const debug = require('debug')('server:server');
 const express = require('express');
 
 const app = express();
-// const port = 3000;
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
@@ -21,6 +20,9 @@ const route = router.get('/', (req, res, next) => {
 app.use('/', route);
 
 server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);
+
 console.log('API rodando na porta ' + port);
 
 
@@ -37,7 +39,7 @@ function normalizePort(val) {
     return false;
 }
 
-function OnError(error) {
+function onError(error) {
 
     if (error.syscall !== 'listen') {
         throw error;
@@ -59,4 +61,11 @@ function OnError(error) {
             throw error;
     }
 
+}
+function onListening() {
+    const addr = server.address();
+    const bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+    debug('Listening on ' + bind);
 }
