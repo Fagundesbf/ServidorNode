@@ -20,6 +20,12 @@ pacote auxiliar json
 
 npm i -g body-parser --save
 
+===============string conexao Mongo ==================
+
+
+mongodb://<dbuser>:<dbpassword>@ds141613.mlab.com:41613/nodstart
+
+npm i mongoose --save
 
 -========================  AULA 1 E 2 =================================
 
