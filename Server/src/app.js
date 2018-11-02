@@ -9,15 +9,12 @@ const app = express();
 const router = express.Router();
 
 // Conecta ao Banco
-mongoose.connect('mongodb://balta:balta123@ds141613.mlab.com:41613/nodstart');
+mongoose.connect('mongodb://balta:balta123@ds259117.mlab.com:59117/nodstart');
 
-if (mongoose == true) {
-    console.log("success");
 
-} else {
-    console.log("não pode ser acessado sem Conexão com internet");
 
-}
+//Carrega os Models
+const Product =  require('./models/product');
 
 //Carrega as Rotas
 const indexRoutes = require('./routes/index-route');
@@ -35,6 +32,7 @@ app.use(bodyParser.urlencoded({
 
 app.use('/', indexRoutes);
 app.use('/products', productsRoutes);
+
 
 
 module.exports = app;

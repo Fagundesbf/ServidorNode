@@ -1,3 +1,6 @@
+
+'use strict'
+
 const app = require('../src/app');
 const debug = require('debug')('server:server');
 const http = require('http');
